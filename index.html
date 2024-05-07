@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pomodoro Timer</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="video">
+        <iframe src="https://www.youtube.com/embed/z9Ug-3qhrwY?si=YASgbpp7pFbiclhx&amp;controls=0&amp;autoplay=1&amp;playsinline=1&amp;loop=1&amp;mute=1&amp;modestbranding=1&amp;showinfo=0&amp;autohide=2&amp;rel=0&amp;start=0" title="Ghiblidoro timer" frameborder="0" loop="true" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+    </div>
+    <section>
+        <div class="container">
+            <div class="subcontainer">
+                    <h1 id="title">Pomodoro Timer - Trabajando</h1>
+                <div class="timer">
+                <div id="hours">00</div>
+                <div>:</div>
+                <div id="minutes">25</div>
+                <div>:</div>
+                <div id="seconds">00</div>
+                </div>
+                <div class="controls">
+                <button id="start">Start</button>
+                <button id="stop">Stop</button>
+                <button id="reset">Reset</button>
+                <button id="Configbtn">Config</button>
+                </div>
+            </div>
+            
+            <div class="subcontainerconfig" id="Config" style="display:none">
+                
+                <div class="settings">
+                    <h2>Config</h2>
+                    <label for="workHours">Work Time (hours):</label>
+                    <input type="number" id="workHours" value="0" min="0">
+                    <label for="workMinutes">Work Time (minutes):</label>
+                    <input type="number" id="workMinutes" value="25" min="0">
+                    <label for="workSeconds">Work Time (seconds):</label>
+                    <input type="number" id="workSeconds" value="0" min="0">
+                    <br>
+                    <label for="breakHours">Break Time (hours):</label>
+                    <input type="number" id="breakHours" value="0" min="0">
+                    <label for="breakMinutes">Break Time (minutes):</label>
+                    <input type="number" id="breakMinutes" value="5" min="0">
+                    <label for="breakSeconds">Break Time (seconds):</label>
+                    <input type="number" id="breakSeconds" value="0" min="0">
+                </div>
+            </div>
+            
+          </div>
+    </section>
+  
+  <footer>
+    <button id="mute">s</button>
+  </footer>
+  <script src="script.js"></script>
+  <script src="/btnconfig.js"></script>
+</body>
+</html>
