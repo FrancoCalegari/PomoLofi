@@ -1,6 +1,5 @@
 .music-player {
     background-color: rgba(118, 44, 128, 0.288);
-    padding: 10px;
     border: 1px solid whitesmoke;
     border-radius: 25px;
     width: 30rem;
@@ -77,4 +76,20 @@
 
 .test {
     width: 90%;
+}
+
+@media (max-width: 500px) {
+    .music-player {
+        background-color: rgba(118, 44, 128, 0.288);
+        border: 1px solid whitesmoke;
+        border-radius: 25px;
+        width: 90%;
+        position: relative;
+        margin: auto;
+        margin-bottom: 25px;
+        backdrop-filter: blur(5px);
+        padding: 1.2rem;
+        color: azure;
+    }
+
 }

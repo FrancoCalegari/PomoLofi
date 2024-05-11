@@ -54,7 +54,7 @@ body {
 
 @media (min-aspect-ratio: 16 / 9) {
     .video #backgorunds {
-        height: calc(63.25vw + 300px);
+        height: calc(69.25vw + 300px);
         margin-top: -300px;
     }
 }
@@ -62,7 +62,8 @@ body {
 
 @media (max-aspect-ratio: 16 / 9) {
     .video #backgorunds {
-        width: 177.78vh;
+        width: 212.78vh;
+        height: 120vh;
     }
 }
 
@@ -73,7 +74,7 @@ body {
 
   
   .timer {
-    font-size: 3rem;
+    font-size: 4rem;
     margin-bottom: 20px;
     display: flex;
     justify-content: center;
@@ -137,7 +138,7 @@ body {
     margin-bottom: 5px;
 }
 
-@media (min-width: 400px) {
+@media (max-width: 500px) {
     .subcontainerconfig {
         background-color: rgba(118, 44, 128, 0.288);
         padding: 5rem;
@@ -154,6 +155,7 @@ body {
         border-radius: 25px;
         border: 3px solid whitesmoke;
         transition: all 500ms;
+        
     }
 
     .timer {
@@ -162,6 +164,14 @@ body {
         display: flex;
         justify-content: center;
         transition: all 500ms;
+    }
+
+    .container {
+        position: relative;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        
     }
 }
 
