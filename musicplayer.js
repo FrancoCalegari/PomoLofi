@@ -51,10 +51,16 @@ function addSong() {
   var songUrlInput = document.getElementById("song-url");
   var songUrl = songUrlInput.value;
   if (songUrl.trim() !== "") {
-    playlist.push({ url: songUrl });
-    songUrlInput.value = "";
-    renderPlaylist();
-    savePlaylistToLocalStorage();
+    var youtubeId = getId(songUrl);
+    if (youtubeId !== 'error') {
+      var youtubeEmbedUrl = "https://www.youtube.com/embed/" + youtubeId + "?autoplay=1";
+      playlist.push({ url: youtubeEmbedUrl });
+      songUrlInput.value = "";
+      renderPlaylist();
+      savePlaylistToLocalStorage();
+    } else {
+      alert("URL de YouTube no válido.");
+    }
   }
 }
 
@@ -100,6 +106,17 @@ function renderPlaylist() {
 
 function savePlaylistToLocalStorage() {
   localStorage.setItem("playlist", JSON.stringify(playlist));
+}
+
+function getId(url) {
+    var regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+    var match = url.match(regExp);
+
+    if (match && match[2].length == 11) {
+        return match[2];
+    } else {
+        return 'error';
+    }
 }
 
 // Reproduce la primera canción cuando se carga la página
