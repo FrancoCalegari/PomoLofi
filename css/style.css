@@ -10,7 +10,7 @@
 
 section {
     width: 100%;
-    height: 98vh;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -53,7 +53,7 @@ body {
 
 
 @media (min-aspect-ratio: 16 / 9) {
-    .video iframe {
+    .video #backgorunds {
         height: calc(63.25vw + 300px);
         margin-top: -300px;
     }
@@ -61,12 +61,12 @@ body {
 
 
 @media (max-aspect-ratio: 16 / 9) {
-    .video iframe {
+    .video #backgorunds {
         width: 177.78vh;
     }
 }
 
-iframe {
+#backgorunds {
     width: 100vw;
     height: 100vh;
 }

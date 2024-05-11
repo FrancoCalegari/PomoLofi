@@ -5,10 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pomodoro Timer</title>
   <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/musicplayer.css">
 </head>
 <body>
     <div class="video">
-        <iframe src="https://www.youtube.com/embed/ipQJR0rcvzw?si=xvnibbNv9oGtsMlZ&amp;controls=0&amp;autoplay=1&amp;playsinline=1&amp;loop=1&amp;mute=1&amp;modestbranding=1&amp;showinfo=0&amp;autohide=2&amp;rel=0&amp;start=0" title="Ghiblidoro timer" frameborder="0" loop="true" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+        <iframe src="https://www.youtube.com/embed/ipQJR0rcvzw?si=xvnibbNv9oGtsMlZ&amp;controls=0&amp;autoplay=1&amp;playsinline=1&amp;loop=1&amp;mute=1&amp;modestbranding=1&amp;showinfo=0&amp;autohide=2&amp;rel=0&amp;start=0" title="Ghiblidoro timer" frameborder="0" loop="true" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" id="backgorunds"></iframe>
     </div>
     <section>
         <div class="container">
@@ -27,6 +28,7 @@
                 <button id="reset">Reset</button>
                 <button id="Configbtn">Config</button>
                 </div>
+            </div>
             </div>
             
             <div class="subcontainerconfig" id="Config" style="display:none">
@@ -51,11 +53,31 @@
             
           </div>
     </section>
+
+    <div class="music-player">
+      <div class="player-controls">
+        <button id="play-btn" onclick="togglePlayPause()">▶</button>
+        <button id="prev-btn" onclick="playPrev()">⏪</button>
+        <button id="next-btn" onclick="playNext()">⏩</button>
+      </div>
+      <div class="song-info">
+        <span id="current-song">Canción actual: </span>
+      </div>
+      <div class="playlist">
+        <h3>Lista de Reproducción</h3>
+        <input type="text" id="song-url" placeholder="URL de YouTube:">
+        <button onclick="addSong()">Agregar</button>
+        <ul id="playlist-items">
+
+        </ul>
+      </div>
+    </div>
   
-  <footer>
-    <button id="mute">s</button>
-  </footer>
+    <footer style="position: relative; color: aliceblue;">
+      <p>Desing and programing by <a href="https://francocalegari.github.io/PortfolioFrancoCalegari/" style="color: blue;">Franco Calegari</a></p>
+    </footer>
   <script src="./script.js"></script>
   <script src="./btnconfig.js"></script>
+  <script src="./musicplayer.js"></script>
 </body>
 </html>
