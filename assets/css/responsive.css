@@ -13,10 +13,11 @@
 		border-radius: 15px;
 	}
 
-	.subcontainerconfig {
-		width: 90%;
-		border-radius: 0;
-	}
+    .subcontainerconfig {
+        width: 90%;
+        border-radius: 0;
+        overflow-y: auto;
+    }
 
 	.controls button {
 		font-size: 0.9rem;
