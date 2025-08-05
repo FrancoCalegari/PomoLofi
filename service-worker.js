@@ -11,7 +11,8 @@ const urlsToCache = [
   "./assets/js/musicplayer.js",
   "./assets/js/btnconfig.js",
   "./assets/img/icon-192.png",
-  "./assets/img/icon-512.png"
+  "./assets/img/icon-512.png",
+   "./assets/css/responsive.css",
 ];
 
 self.addEventListener("install", event => {
