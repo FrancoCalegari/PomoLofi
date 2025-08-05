@@ -1,0 +1,238 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+section {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+body {
+	font-family: Arial, sans-serif;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	margin: 0;
+}
+
+
+
+.video {
+	width: 100%;
+	position: relative;
+	padding: 0;
+	object-fit: cover;
+	pointer-events: none;
+	cursor: default;
+	position: fixed;
+	left: 0;
+	top: 0;
+}
+
+@media (min-aspect-ratio: 16 / 9) {
+	.video #backgorunds {
+		height: calc(69.25vw + 300px);
+		margin-top: -300px;
+	}
+}
+
+@media (max-aspect-ratio: 16 / 9) {
+	.video #backgorunds {
+		width: 212.78vh;
+		height: 120vh;
+	}
+}
+
+.container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	overflow: hidden;
+	transition: all 500ms;
+}
+
+#backgorunds {
+	width: 100vw;
+	height: 100vh;
+}
+
+.timer {
+	font-size: 4rem;
+	margin-bottom: 20px;
+	display: flex;
+	justify-content: center;
+	transition: all 500ms;
+}
+
+.controls {
+	display: flex;
+}
+
+.controls button {
+	font-size: 1rem;
+	margin: 0 10px;
+	padding: 5px 10px;
+	cursor: pointer;
+	background-color: rgba(118, 44, 128, 0.568);
+	border: solid 1px #fff;
+	border-radius: 8px;
+	color: azure;
+}
+
+.settings {
+    display: flex;
+    flex-direction: column;
+    color: azure;
+}
+
+.settings h2 {
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+    color: azure;
+    text-shadow: 0 1px 8px rgba(118, 44, 128, 0.25);
+}
+
+.settings label {
+    margin-bottom: 0.2rem;
+    font-size: 1rem;
+    color: azure;
+}
+
+.settings input {
+    width: 5rem;
+    height: 1.7rem;
+    margin: 0.2rem 0 0.7rem 0;
+    border-radius: 8px;
+    background: rgba(180, 180, 255, 0.22);
+    text-align: center;
+    color: azure;
+    border: 1px solid #fff;
+    box-shadow: 0 2px 8px rgba(118, 44, 128, 0.12);
+    outline: none;
+    transition: border 0.3s, box-shadow 0.3s;
+}
+
+.settings input:focus {
+    border: 1.5px solid #762c80;
+    box-shadow: 0 0 0 2px rgba(118, 44, 128, 0.18);
+    background: rgba(180, 180, 255, 0.32);
+}
+
+.subcontainer {
+	background-color: rgba(118, 44, 128, 0.288);
+	padding: 9rem;
+	border-radius: 25px;
+	border: 3px solid whitesmoke;
+	backdrop-filter: blur(5px);
+	color: azure;
+    transition: all 500ms ease;
+	z-index: 2;
+   
+}
+
+.subcontainerconfig {
+	position: absolute;
+	right: -100%; /* Oculto fuera de la vista inicialmente */
+	top: 0;
+	height: 100%;
+	width: 300px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: rgba(118, 44, 128, 0.288);
+	backdrop-filter: blur(5px);
+	border-left: 3px solid whitesmoke;
+	border-radius: 0 25px 25px 0;
+	transition: all 500ms ease;
+    padding: 1rem;
+	z-index: 12;
+}
+
+
+/* Visible: se desliza hacia la izquierda */
+.subcontainerconfig.visible {
+	right: 0;
+}
+
+/* Oculto: animación fuera de la vista */
+.subcontainerconfig.hidden {
+	right: -100%;
+}
+
+
+.subcontainerconfig h2 {
+	margin-bottom: 5px;
+}
+
+
+#closeConfigBtn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 6px 12px;
+    border: 2px solid #dadadada;
+    border-radius: 10px;
+    background-color: rgba(118, 44, 128, 0.568);
+    color: azure;
+    cursor: pointer;
+    transition: background 300ms;
+}
+
+#closeConfigBtn:hover {
+    background-color: rgba(118, 44, 128, 0.8);
+    cursor: pointer;
+}
+
+/*footer*/
+
+footer {
+	display: flex;
+	position: absolute;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background: rgba(45, 24, 64, 0.4); /* fondo semi-transparente */
+	backdrop-filter: blur(8px); /* desenfoque */
+	-webkit-backdrop-filter: blur(8px); /* soporte para Safari */
+	border-top: 2px solid rgba(118, 44, 128, 0.4);
+	border-radius: 0 0 25px 25px; /* bordes suaves opcionales */
+	color: #f3eaff;
+	padding: 1.5em 0;
+	text-align: center;
+	font-size: 1em;
+	width: 100%;
+	z-index: 12;
+	box-shadow: 0 -4px 30px rgba(0, 0, 0, 0.1); /* leve sombra para profundidad */
+}
+
+
+footer strong {
+	font-weight: bold;
+	letter-spacing: 1px;
+}
+
+footer a {
+	color: #7e57c2;
+	text-decoration: underline;
+	transition: color 0.3s;
+}
+
+footer a:hover {
+	color: #b39ddb;
+}
+
+footer div {
+	margin: 0.3em 0;
+}
+
+footer div:last-child {
+	margin-top: 0.5em;
+	font-size: 0.9em;
+	opacity: 0.85;
+}

@@ -14,7 +14,7 @@ function updateTimer(hours, minutes, seconds) {
 
 function updateTitle() {
   const title = document.getElementById('title');
-  title.textContent = isWorking ? "Pomodoro Timer - Trabajando" : "Pomodoro Timer - Descansando";
+  title.textContent = isWorking ? "PomoLofi - Trabajando" : "PomoLofi - Descansando";
 }
 
 function startTimer(workHours, workMinutes, workSeconds, breakHours, breakMinutes, breakSeconds) {

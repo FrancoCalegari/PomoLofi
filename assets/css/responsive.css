@@ -1,0 +1,58 @@
+/* responsive.css */
+
+/* ------------------ */
+/* 📱 MOBILE ADAPTIVE */
+/* ------------------ */
+@media screen and (max-width: 768px) {
+	.timer {
+		font-size: 2.5rem;
+	}
+
+	.subcontainer {
+		padding: 1.5rem;
+		border-radius: 15px;
+	}
+
+	.subcontainerconfig {
+		width: 90%;
+		border-radius: 0;
+	}
+
+	.controls button {
+		font-size: 0.9rem;
+		padding: 6px 10px;
+	}
+
+	.settings h2 {
+		font-size: 1.1rem;
+	}
+
+	.settings label {
+		font-size: 0.9rem;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.timer {
+		font-size: 2rem;
+	}
+
+	.controls {
+		flex-direction: column;
+	}
+
+	.controls button {
+		margin: 5px auto;
+		width: 80%;
+	}
+
+	.subcontainer {
+		width: 100%;
+		padding: 1rem;
+	}
+
+	.settings input {
+		height: 1.6rem;
+		font-size: 0.9rem;
+	}
+}
