@@ -2,6 +2,30 @@ let timer;
 let isRunning = false;
 let isWorking = true;
 
+// ------------------ SONIDOS ------------------
+const workSound = new Audio("work.mp3");   // Sonido al iniciar trabajo
+const breakSound = new Audio("./assets/sounds/RelaxTimer.mp3"); // Sonido al iniciar descanso
+
+// Para que no se repita el sonido en loop accidentalmente
+workSound.loop = false;
+breakSound.loop = false;
+
+// ------------------ POPUP ------------------
+function showPopup(message) {
+  const popup = document.getElementById("popup");
+  const popupMessage = document.getElementById("popup-message");
+
+  popupMessage.textContent = message;
+  popup.classList.add("show");
+
+  // Ocultar después de 4 segundos
+  setTimeout(() => {
+    popup.classList.remove("show");
+  }, 4000);
+}
+
+
+
 function updateTimer(hours, minutes, seconds) {
   const hoursDisplay = document.getElementById('hours');
   const minutesDisplay = document.getElementById('minutes');
@@ -31,10 +55,12 @@ function startTimer(workHours, workMinutes, workSeconds, breakHours, breakMinute
         isRunning = false;
         isWorking = false;
         updateTitle();
-        alert("¡Tiempo de trabajo terminado! ¡Hora de descansar!");
+        breakSound.play(); // 🔊 Sonido de descanso
+        showPopup("¡Tiempo de trabajo terminado! 💤 Hora de descansar");
         startBreak(breakHours, breakMinutes, breakSeconds);
         return;
       }
+
       if (workSecondsLeft === 0) {
         if (workMinutesLeft === 0 && workHoursLeft === 0) {
           clearInterval(timer);
@@ -68,15 +94,19 @@ function startBreak(breakHours, breakMinutes, breakSeconds) {
       isRunning = false;
       isWorking = true;
       updateTitle();
-      alert("¡Tiempo de descanso terminado! ¡Hora de trabajar de nuevo!");
-      startTimer(parseInt(document.getElementById('workHours').value),
-                 parseInt(document.getElementById('workMinutes').value),
-                 parseInt(document.getElementById('workSeconds').value),
-                 parseInt(document.getElementById('breakHours').value),
-                 parseInt(document.getElementById('breakMinutes').value),
-                 parseInt(document.getElementById('breakSeconds').value));
+      workSound.play(); // 🔊 Sonido de trabajo
+      showPopup("¡Tiempo de trabajo terminado! 💤 Hora de descansar");
+      startTimer(
+        parseInt(document.getElementById('workHours').value),
+        parseInt(document.getElementById('workMinutes').value),
+        parseInt(document.getElementById('workSeconds').value),
+        parseInt(document.getElementById('breakHours').value),
+        parseInt(document.getElementById('breakMinutes').value),
+        parseInt(document.getElementById('breakSeconds').value)
+      );
       return;
     }
+
     if (breakSecondsLeft === 0) {
       if (breakMinutesLeft === 0 && breakHoursLeft === 0) {
         clearInterval(timer);
