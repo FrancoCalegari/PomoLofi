@@ -3,8 +3,8 @@ let isRunning = false;
 let isWorking = true;
 
 // ------------------ SONIDOS ------------------
-const workSound = new Audio("work.mp3");   // Sonido al iniciar trabajo
-const breakSound = new Audio("./assets/sounds/RelaxTimer.mp3"); // Sonido al iniciar descanso
+const workSound = new Audio("./assets/sounds/WorkTimer.mp3");   // Sonido al iniciar trabajo
+const breakSound = new Audio("./assets/sounds/RelaxTimer.wav"); // Sonido al iniciar descanso
 
 // Para que no se repita el sonido en loop accidentalmente
 workSound.loop = false;
@@ -23,8 +23,6 @@ function showPopup(message) {
     popup.classList.remove("show");
   }, 4000);
 }
-
-
 
 function updateTimer(hours, minutes, seconds) {
   const hoursDisplay = document.getElementById('hours');
@@ -95,7 +93,7 @@ function startBreak(breakHours, breakMinutes, breakSeconds) {
       isWorking = true;
       updateTitle();
       workSound.play(); // 🔊 Sonido de trabajo
-      showPopup("¡Tiempo de trabajo terminado! 💤 Hora de descansar");
+      showPopup("¡Descanso terminado! 🚀 Hora de trabajar");
       startTimer(
         parseInt(document.getElementById('workHours').value),
         parseInt(document.getElementById('workMinutes').value),
