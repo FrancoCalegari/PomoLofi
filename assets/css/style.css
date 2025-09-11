@@ -4,16 +4,23 @@
 	box-sizing: border-box;
 }
 
+@font-face {
+  font-family: 'FontLofi';
+  src: url('/assets/fonts/FontLofi.ttf') format('truetype');
+}
+
+
 section {
 	width: 100%;
 	height: 100vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	font-family: 'FontLofi';
 }
 
 body {
-	font-family: Arial, sans-serif;
+	font-family: 'FontLofi';
 	justify-content: center;
 	align-items: center;
 	height: 100vh;
@@ -32,6 +39,7 @@ body {
 	position: fixed;
 	left: 0;
 	top: 0;
+	font-family: 'FontLofi';
 }
 
 @media (min-aspect-ratio: 16 / 9) {
@@ -55,6 +63,7 @@ body {
 	position: relative;
 	overflow: hidden;
 	transition: all 500ms;
+	font-family: 'FontLofi';
 }
 
 #backgorunds {
@@ -83,6 +92,7 @@ body {
 	border: solid 1px #fff;
 	border-radius: 8px;
 	color: azure;
+	font-family: 'FontLofi';
 }
 
 .settings {
@@ -213,7 +223,7 @@ footer {
 	color: #f3eaff;
 	padding: 1.5em 0;
 	text-align: center;
-	font-size: 1em;
+	font-size: 1.3em;
 	width: 100%;
 	z-index: 12;
 	box-shadow: 0 -4px 30px rgba(0, 0, 0, 0.1); /* leve sombra para profundidad */
@@ -263,6 +273,7 @@ footer div:last-child {
 
 /* --- Popup Notificación --- */
 #popup {
+	font-family: 'FontLofi';
 	width: 28vw;
 	height: 8vh;
 	position: fixed;
