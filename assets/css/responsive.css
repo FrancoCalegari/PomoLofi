@@ -13,11 +13,11 @@
 		border-radius: 15px;
 	}
 
-    .subcontainerconfig {
-        width: 90%;
-        border-radius: 0;
-        overflow-y: auto;
-    }
+	.subcontainerconfig {
+		width: 90%;
+		border-radius: 0;
+		overflow-y: auto;
+	}
 
 	.controls button {
 		font-size: 0.9rem;
@@ -30,6 +30,11 @@
 
 	.settings label {
 		font-size: 0.9rem;
+	}
+
+	#popup-confirm {
+		width: 60vw;
+		height: 23vh;
 	}
 }
 
