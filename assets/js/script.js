@@ -363,9 +363,11 @@ function updateProfileIndicator(name) {
 		indicator = document.createElement("div");
 		indicator.id = "profile-indicator";
 		indicator.style.fontSize = "1rem";
-		indicator.style.marginTop = "-10px";
+		indicator.style.marginTop = "0";
 		indicator.style.marginBottom = "10px";
 		indicator.style.opacity = "0.8";
+		indicator.style.textAlign = "center";
+
 		const title = document.getElementById("title");
 		title.parentNode.insertBefore(indicator, title.nextSibling);
 	}
